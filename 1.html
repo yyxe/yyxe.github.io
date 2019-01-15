@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标准内置对象</title>
+	<style type="text/css">
+		/**{
+			margin: 0;
+			padding: 0;
+		}*/
+		html {
+		  background-color: #f3f3f3;
+		}
+		body {
+		  width: 600px;
+		  margin: 0 auto;
+		  background-color: #f5f6f8;
+		  padding: 0 20px 20px 20px;
+		  border: 5px solid #e8e8e8;
+		}
+		img {
+		  display: block;
+		  margin: 0 auto;
+		}
+		h1{
+			color: #837aff;
+			font-weight: normal;
+			text-align: center;
+  			text-shadow: 3px 3px 1px #666666;
+  			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hello World1！可以试着点击我哟</h1>
+	<p>
+		My cat is very <strong>grumpy</strong>.
+		<hr>
+		它是可点击的：lovely cat
+	</p>
+	<img src="images/2.jpg" alt="测试图片" width="400" height="500" />
+	<ul> 
+	  <li>technologists</li>
+	  <li>thinkers</li>
+	  <li>builders</li>
+	</ul>
+	<a href="https://www.baidu.com/">这是百度链接</a>
+	<p>下面的数字原来是777</p>
+	<h2>原来是777</h2>
+	<button>Change user</button>
+</body>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+	//全局的对象（global objects）或者称标准内置对象
+
+	//全局对象（global object）是一个Global类的对象 可以在全局作用域里，用this访问（非严格模式下） 全局作用域包含了全局对象的属性，还有他可能继承来的属性
+
+	/*
+		标准内置对象的分类
+		值属性： Infinity 数值 无穷大 / NaN 表示不是一个数值 / undefined 全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined / null 对象的值未设置 javascript的基本类型之一
+
+
+		函数属性：全局函数可以直接调用，不需要在调用时指定所属对象，执行结束后会将结果直接返回给调用者
+		1.eval() 执行指定代码之后的返回值。如果返回值为空，返回undefined
+		2.uneval() 创建一个代表对象的源代码的字符串。 非标准 不建议使用
+		3.isNaN 确定一个值是否为NaN
+		4.parseFloat() 函数解析一个字符串参数并返回一个浮点数。
+		5.parseInt() 函数解析一个字符串参数，并返回一个指定基数的整数 (数学系统的基础)
+	*/
+	console.log(eval(new String("2 + 2")))
+	
+	function multiply(num1, num2) {
+		var result = num1 * num2;
+		return result;
+	}
+	var result = multiply(333, 2)
+	var h2 = document.querySelector('h2');
+	h2.innerHTML = result
+
+	var myHeading = document.querySelector('h1');
+	myHeading.textContent = "可以试着点击我哟"
+	// myHeading.onclick = function () {
+	// 	myHeading.textContent = "可 爱 萱！"
+	// }
+	// myHeading.textContent = "可 爱 萱！"
+
+	var myImage = document.querySelector('img');
+	myImage.onclick = function () {
+		var mySrc = myImage.getAttribute('src');
+		if(mySrc === 'images/2.jpg') {
+			myImage.setAttribute('src', 'images/3.jpg');
+		} else {
+			myImage.setAttribute('src', 'images/2.jpg');
+		}
+	}
+
+	function setUserName() {
+		// body...
+		var myName = prompt('Please enter your name.');
+		localStorage.setItem('name', myName);
+		myHeading.textContent = '小可爱' + myName + '！';
+	}
+	if(!localStorage.getItem('name')) {
+		setUserName();
+	} else {
+		var storedName = localStorage.getItem('name');
+		myHeading.textContent = '小可爱' + storedName + '！';
+	}
+	var myButton = document.querySelector('button');
+	myButton.onclick = function () {
+		setUserName();
+	}
+</script>
+</html>
