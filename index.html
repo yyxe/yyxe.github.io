@@ -4,33 +4,7 @@
 	<meta charset="utf-8">
 	<title>萱萱小可爱</title>
 	<link rel="icon" type="image/x-icon" href="images/1.jpg"/>
-	<style type="text/css">
-		/**{
-			margin: 0;
-			padding: 0;
-		}*/
-		html {
-		  background-color: #f3f3f3;
-		}
-		body {
-		  width: 600px;
-		  margin: 0 auto;
-		  background-color: #f5f6f8;
-		  padding: 0 20px 20px 20px;
-		  border: 5px solid #e8e8e8;
-		}
-		img {
-		  display: block;
-		  margin: 0 auto;
-		}
-		h1{
-			color: #837aff;
-			font-weight: normal;
-			text-align: center;
-  			text-shadow: 3px 3px 1px #666666;
-  			cursor: pointer;
-		}
-	</style>
+	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 	<h1>Hello World1！可以试着点击我哟</h1>
@@ -46,9 +20,16 @@
 	  <li>builders</li>
 	</ul>
 	<a href="https://www.baidu.com/">这是百度链接</a>
-	<p>下面的数字原来是777</p>
+	<p>点击下面的数字</p>
 	<h2>原来是777</h2>
 	<button>Change user</button>
+	<svg version="1.1"
+		 baseProfile="full"
+		 width="300" height="200"
+		 xmlns="http://www.w3.org/2000/svg">
+		<rect width="100%" height="100%" fill="greenyellow" />
+		<circle cx="150" cy="100" r="90" fill="cornflowerblue" />
+	</svg>
 </body>
 <script src="js/main.js"></script>
 <script type="text/javascript">
@@ -74,9 +55,11 @@
 		var result = num1 * num2;
 		return result;
 	}
-	var result = multiply(333, 2)
+	var result = multiply(333, 2);
 	var h2 = document.querySelector('h2');
-	h2.innerHTML = result
+	h2.onclick = function () {
+        h2.innerHTML = '现在是' + result
+	}
 
 	var myHeading = document.querySelector('h1');
 	myHeading.textContent = "可以试着点击我哟"
