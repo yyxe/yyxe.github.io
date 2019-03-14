@@ -22,7 +22,7 @@
 	<a href="https://www.baidu.com/">这是百度链接</a>
 	<p>点击下面的数字</p>
 	<h2>原来是777</h2>
-	<button>Change user</button>
+	<button class="change-user">Change user</button>
 	<svg version="1.1"
 		 baseProfile="full"
 		 width="300" height="200"
@@ -30,6 +30,57 @@
 		<rect width="100%" height="100%" fill="greenyellow" />
 		<circle cx="150" cy="100" r="90" fill="cornflowerblue" />
 	</svg>
+	<p>表格：</p>
+	<table>
+		<tr>
+			<td>Knocky</td>
+			<td>Flor</td>
+			<td>Ella</td>
+			<td>Juan</td>
+		</tr>
+		<tr>
+			<td>Jack Russell</td>
+			<td>Poodle</td>
+			<td>Streetdog</td>
+			<td>Cocker Spaniel</td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td>16</td>
+			<td>9</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td>Mother-in-law</td>
+			<td>Me</td>
+			<td>Me</td>
+			<td>Sister-in-law</td>
+		</tr>
+		<tr>
+			<td>Eats everyone's leftovers</td>
+			<td>Nibbles at food</td>
+			<td>Hearty eater</td>
+			<td>Will eat till he explodes</td>
+		</tr>
+	</table>
+	<form action="/my-handling-form-page" method="post">
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" id="name" />
+		</div>
+		<div>
+			<label for="mail">E-mail:</label>
+			<input type="email" id="mail" />
+		</div>
+		<div>
+			<label for="msg">Message:</label>
+			<textarea id="msg"></textarea>
+		</div>
+		<div class="button">
+			<button type="submit">Send your message</button>
+		</div>
+	</form>
+
 </body>
 <script src="js/main.js"></script>
 <script type="text/javascript">
